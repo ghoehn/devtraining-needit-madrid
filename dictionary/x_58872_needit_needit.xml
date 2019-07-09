@@ -1,25 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
-    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="4" type="collection">
         <element label="New field 1" max_length="40" name="new_field_1" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
-        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
-        <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Application" mandatory="true" max_length="40" name="u_application" type="string">
             <choice>
-                <element label="Human Resources" sequence="0" value="hr"/>
-                <element label="Facilities" sequence="1" value="facilities"/>
-                <element label="Legal" sequence="2" value="legal"/>
+                <element inactive_on_update="false" label="Rig schedule" sequence="0" value="rig schedule"/>
+                <element inactive_on_update="false" label="Vacations" sequence="1" value="vacations"/>
+                <element inactive_on_update="false" label="MOC PA" sequence="2" value="moc pa"/>
+                <element inactive_on_update="false" label="Work Report" sequence="3" value="work report"/>
+                <element inactive_on_update="false" label="AFE" sequence="4" value="afe"/>
             </choice>
         </element>
-        <element attributes="edge_encryption_enabled=true" choice="3" default="legal1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Application" max_length="40" name="u_application_1" type="string">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Requested for email" mandatory="true" max_length="40" name="u_requested_for_email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="inquiry/help" label="Category" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
-                <element label="Human Resources 1" sequence="0" value="hr1"/>
-                <element label="Human Resources 2" sequence="1" value="hr2"/>
-                <element label="Facilities 1" sequence="2" value="facilities1"/>
-                <element label="Facilities 2" sequence="3" value="facilities2"/>
-                <element label="Legal 1" sequence="4" value="legal1"/>
-                <element label="Legal 2" sequence="5" value="legal2"/>
-                <element label="Other" sequence="6" value="other"/>
+                <element inactive_on_update="false" label="Inquiry/Help" sequence="0" value="Inquiry_Help"/>
+                <element inactive_on_update="false" label="Hardware" sequence="1" value="hardware"/>
+                <element inactive_on_update="false" label="Phone" sequence="3" value="phone"/>
+                <element inactive_on_update="false" label="Applications" sequence="4" value="applications"/>
+                <element inactive_on_update="false" label="Infrastructure" sequence="5" value="infrastructure"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" choice_field="mobile_subcategory_render_type" dependent="u_request_type" dependent_on_field="u_request_type" label="Sub Category" mandatory="true" max_length="40" name="u_what_needed" type="string" use_dependent_field="true" use_dynamic_default="true">
+            <choice>
+                <element dependent_value="phone" inactive_on_update="false" label="Cell phones" value="cell_phones"/>
+                <element dependent_value="applications" inactive_on_update="false" label="Default" value="default"/>
+                <element dependent_value="phone" inactive_on_update="false" label="Desk Phones" value="desk_phones"/>
+                <element dependent_value="hardware" inactive_on_update="false" label="Desktop/Laptop" value="Desktop_Laptop"/>
+                <element dependent_value="infrastructure" inactive_on_update="false" label="Network and Security" value="network"/>
+                <element dependent_value="hardware" inactive_on_update="false" label="Peripheral" value="peripheral"/>
+                <element dependent_value="hardware" inactive_on_update="false" label="Printer/Scanner" value="printer_scanner"/>
+                <element dependent_value="infrastructure" inactive_on_update="false" label="Systems" value="systems"/>
+                <element dependent_value="applications" inactive_on_update="false" label="Quorum" sequence="0" value="quorum"/>
+                <element dependent_value="inquiry_help" inactive="true" inactive_on_update="true" label="To be determinded" sequence="0" value="to_be_determined"/>
+                <element dependent_value="applications" inactive_on_update="false" label="Business Apps" sequence="1" value="business_apps"/>
+                <element dependent_value="applications" inactive_on_update="false" label="Custom Apps" sequence="2" value="custom_apps"/>
             </choice>
         </element>
         <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
