@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="MOC Application List V2" max_length="40" name="x_58872_needit_moc_application_list_v2" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Application" label="Application" max_length="47" name="u_application" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Category" label="Category" max_length="40" name="u_category" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Manufacture" label="Manufacture" max_length="40" name="u_manufacture" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=SubCatergory" label="SubCatergory" max_length="40" name="u_subcatergory" type="string"/>
+    </element>
+</database>

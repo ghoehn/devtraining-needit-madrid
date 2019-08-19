@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.Neetit_script_include_for_What_needed</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Neetit_script_include_for_What_needed</name>
+        <script><![CDATA[var Neetit_script_include_for_What_needed = Class.create();
+Neetit_script_include_for_What_needed.prototype = {
+    initialize: function() {
+		g_form.setValue('short_description', '... from Javascript');
+    },
+
+    type: 'Neetit_script_include_for_What_needed'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-14 15:40:19</sys_created_on>
+        <sys_id>99593d05db533300483d8809489619fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Neetit_script_include_for_What_needed</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_99593d05db533300483d8809489619fd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-14 15:40:19</sys_updated_on>
+    </sys_script_include>
+</record_update>
